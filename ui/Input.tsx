@@ -15,7 +15,12 @@ export default function Input({...props}: Props) {
           borderWidth: 1,
           borderColor: 'primary.500',
         }}
-        borderWidth={0}
+        _android={{
+          borderWidth: 1,
+        }}
+        _ios={{
+          borderWidth: 0,
+        }}
         p="2"
         {...props}
       />

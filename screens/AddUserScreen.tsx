@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, VStack} from 'native-base';
+import {Button, ScrollView, VStack} from 'native-base';
 import {Formik} from 'formik';
 
 import {userModel} from '@constants/yupmodels';
@@ -32,72 +32,74 @@ export default function AddUserScreen() {
         resetForm();
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors, touched}) => (
-        <VStack bg="white" flex={1} space={5} p="3">
-          <Input
-            placeholder="First name"
-            onChangeText={handleChange('firstName')}
-            onBlur={handleBlur('firstName')}
-            value={values.firstName}
-            errorMessage={touched.firstName && errors.firstName}
-          />
-          <Input
-            placeholder="Last name"
-            onChangeText={handleChange('lastName')}
-            onBlur={handleBlur('lastName')}
-            value={values.lastName}
-            errorMessage={touched.lastName && errors.lastName}
-          />
-          <Input
-            placeholder="Email"
-            onChangeText={handleChange('email')}
-            onBlur={handleBlur('email')}
-            value={values.email}
-            errorMessage={touched.email && errors.email}
-          />
-          <Input
-            placeholder="Age"
-            onChangeText={handleChange('age')}
-            onBlur={handleBlur('age')}
-            value={values.age.toString()}
-            errorMessage={touched.age && errors.age}
-          />
+        <ScrollView bg="white">
+          <VStack bg="white" flex={1} space={5} p="3">
+            <Input
+              placeholder="First name"
+              onChangeText={handleChange('firstName')}
+              onBlur={handleBlur('firstName')}
+              value={values.firstName}
+              errorMessage={touched.firstName && errors.firstName}
+            />
+            <Input
+              placeholder="Last name"
+              onChangeText={handleChange('lastName')}
+              onBlur={handleBlur('lastName')}
+              value={values.lastName}
+              errorMessage={touched.lastName && errors.lastName}
+            />
+            <Input
+              placeholder="Email"
+              onChangeText={handleChange('email')}
+              onBlur={handleBlur('email')}
+              value={values.email}
+              errorMessage={touched.email && errors.email}
+            />
+            <Input
+              placeholder="Age"
+              onChangeText={handleChange('age')}
+              onBlur={handleBlur('age')}
+              value={values.age.toString()}
+              errorMessage={touched.age && errors.age}
+            />
 
-          <Input
-            placeholder="Address"
-            onChangeText={handleChange('address')}
-            onBlur={handleBlur('address')}
-            value={values.address}
-            errorMessage={touched.address && errors.address}
-          />
-          <Input
-            placeholder="city"
-            onChangeText={handleChange('city')}
-            onBlur={handleBlur('city')}
-            value={values.city}
-            errorMessage={touched.city && errors.city}
-          />
-          <Input
-            placeholder="Postal code"
-            onChangeText={handleChange('postalCode')}
-            onBlur={handleBlur('postalCode')}
-            value={values.postalCode}
-            errorMessage={touched.postalCode && errors.postalCode}
-          />
-          <Input
-            placeholder="State"
-            onChangeText={handleChange('state')}
-            onBlur={handleBlur('state')}
-            value={values.state}
-            errorMessage={touched.state && errors.state}
-          />
-          <Button
-            onPress={handleSubmit}
-            bg="primary.500"
-            _text={{color: 'white', fontSize: 'p1', fontWeight: 'bold'}}
-            _pressed={{bg: 'primary.600'}}>
-            Add User
-          </Button>
-        </VStack>
+            <Input
+              placeholder="Address"
+              onChangeText={handleChange('address')}
+              onBlur={handleBlur('address')}
+              value={values.address}
+              errorMessage={touched.address && errors.address}
+            />
+            <Input
+              placeholder="City"
+              onChangeText={handleChange('city')}
+              onBlur={handleBlur('city')}
+              value={values.city}
+              errorMessage={touched.city && errors.city}
+            />
+            <Input
+              placeholder="Postal code"
+              onChangeText={handleChange('postalCode')}
+              onBlur={handleBlur('postalCode')}
+              value={values.postalCode}
+              errorMessage={touched.postalCode && errors.postalCode}
+            />
+            <Input
+              placeholder="State"
+              onChangeText={handleChange('state')}
+              onBlur={handleBlur('state')}
+              value={values.state}
+              errorMessage={touched.state && errors.state}
+            />
+            <Button
+              onPress={handleSubmit}
+              bg="primary.500"
+              _text={{color: 'white', fontSize: 'p1', fontWeight: 'bold'}}
+              _pressed={{bg: 'primary.600'}}>
+              Add User
+            </Button>
+          </VStack>
+        </ScrollView>
       )}
     </Formik>
   );
