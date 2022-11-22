@@ -22,6 +22,7 @@ export default function AddUserScreen() {
             lastName: values.lastName,
             age: +values.age,
             email: values.email,
+            image: values.image,
             address: {
               address: values.address,
               city: values.city,
@@ -41,6 +42,13 @@ export default function AddUserScreen() {
             flex={1}
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <VStack bg="white" flex={1} space={5} p="3">
+              <Input
+                placeholder="Image URL"
+                onChangeText={handleChange('image')}
+                onBlur={handleBlur('image')}
+                value={values.image}
+                errorMessage={touched.image && errors.image}
+              />
               <Input
                 placeholder="First name"
                 onChangeText={handleChange('firstName')}

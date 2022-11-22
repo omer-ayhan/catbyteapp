@@ -8,7 +8,7 @@ export const userModel = {
     age: '',
     address: '',
     city: '',
-
+    image: '',
     postalCode: '',
     state: '',
   },
