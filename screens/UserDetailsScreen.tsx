@@ -29,6 +29,9 @@ export default function UserDetailsScreen() {
       <Text alignSelf="center" fontSize="p1" fontWeight="bold">
         {user?.firstName} {user?.lastName} ({user?.age})
       </Text>
+      <Text alignSelf="center" fontSize="p1" fontWeight="bold">
+        {user?.email}
+      </Text>
       <Text fontSize="h3">Company Details:</Text>
 
       <Text fontSize="p1">Adress: {user?.address.address}</Text>
