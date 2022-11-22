@@ -5,7 +5,7 @@ export const userModel = {
     firstName: '',
     lastName: '',
     email: '',
-    age: 0,
+    age: '',
     address: '',
     city: '',
 
