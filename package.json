@@ -7,11 +7,30 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "gradle-clean": "cd android && ./gradlew clean && cd ..",
+    "android-list": "emulator -list-avds",
+    "android-emulator": "node ./scripts/android-emulator.js",
+    "ios-simulator": "node ./scripts/ios-simulator.js",
+    "pod-install": "cd ios && pod install && cd ..",
+    "pod-update": "cd ios && pod update && cd ..",
+    "bundle-install": "cd ios && bundle install && cd ..",
+    "start-clean": "react-native start --reset-cache",
+    "check-types": "tsc -w"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.14",
+    "@react-navigation/native-stack": "^6.9.2",
+    "@reduxjs/toolkit": "^1.9.0",
+    "native-base": "^3.4.22",
     "react": "18.1.0",
-    "react-native": "0.70.6"
+    "react-native": "0.70.6",
+    "react-native-reanimated": "^2.13.0",
+    "react-native-safe-area-context": "3.3.2",
+    "react-native-screens": "^3.18.2",
+    "react-native-svg": "12.1.1",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -25,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
