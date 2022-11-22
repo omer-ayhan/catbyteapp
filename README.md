@@ -9,7 +9,7 @@
 
 ## For IOS
 
-` yarn pod-install && yarn ios`
+` yarn && yarn pod-install && yarn ios`
 
 ## For Android
 
