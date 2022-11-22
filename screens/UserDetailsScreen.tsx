@@ -1,18 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {Center, Image, Text, VStack} from 'native-base';
+import {Image, Text, VStack} from 'native-base';
 import {RouteProp, useRoute} from '@react-navigation/native';
-import {InitialState, UserType} from '@store/slices/usersSlice';
-import axios from 'axios';
-import usersApi from '@services/usersApi';
-import {ActivityIndicator} from 'react-native';
-import {useAppSelector} from '@hooks/useAppSelector';
-import Routes from '@constants/routes';
+
+import {UserType} from '@store/slices/usersSlice';
 import {ParamList} from '@constants/types';
+
+import {useAppSelector} from '@hooks/useAppSelector';
 
 export default function UserDetailsScreen() {
   const route = useRoute<RouteProp<ParamList, 'UserDetails'>>();
   const {users} = useAppSelector(state => state.users);
-  const [user, setUser] = useState<InitialState['users'][number] | null>(null);
+  const [user, setUser] = useState<UserType | null>(null);
 
   useEffect(() => {
     setUser(users.find(user => user.id === route.params.id) as UserType);

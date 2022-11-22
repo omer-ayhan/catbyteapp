@@ -1,12 +1,14 @@
-import {View, Text, ActivityIndicator} from 'react-native';
+import {ActivityIndicator} from 'react-native';
 import React from 'react';
-import {useAppSelector} from '@hooks/useAppSelector';
-import {Box, Center, Fab, FlatList, Image} from 'native-base';
-import {device} from '@constants/config';
-import UserCard from '@ui/Cards/UserCard';
+import {Center, Fab, FlatList, Image} from 'native-base';
 import {useNavigation} from '@react-navigation/native';
+
+import {device} from '@constants/config';
 import Routes from '@constants/routes';
 import {Navigate} from '@constants/types';
+
+import {useAppSelector} from '@hooks/useAppSelector';
+import UserCard from '@ui/Cards/UserCard';
 
 export default function OverviewScreen() {
   const {users, isUsersLoading} = useAppSelector(state => state.users);

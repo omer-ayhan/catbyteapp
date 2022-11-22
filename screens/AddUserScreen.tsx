@@ -1,12 +1,12 @@
-import {View, Text} from 'react-native';
 import React from 'react';
-import {useAppSelector} from '@hooks/useAppSelector';
 import {Button, VStack} from 'native-base';
 import {Formik} from 'formik';
+
 import {userModel} from '@constants/yupmodels';
+
+import {AddUser} from '@store/slices/usersSlice';
 import Input from '@ui/Input';
 import {useAppDispatch} from '@hooks/useAppDispatch';
-import {AddUser} from '@store/slices/usersSlice';
 
 export default function AddUserScreen() {
   const dispatch = useAppDispatch();
