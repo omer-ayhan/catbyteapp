@@ -16,9 +16,21 @@ export default function MainNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name={Overview} component={OverviewScreen} />
-        <Stack.Screen name={AddUser} component={AddUserScreen} />
-        <Stack.Screen name={UserDetails} component={UserDetailsScreen} />
+        <Stack.Screen
+          name={Overview}
+          component={OverviewScreen}
+          options={{title: 'Overview', headerShadowVisible: false}}
+        />
+        <Stack.Screen
+          name={AddUser}
+          component={AddUserScreen}
+          options={{title: 'Add User', headerShadowVisible: false}}
+        />
+        <Stack.Screen
+          name={UserDetails}
+          component={UserDetailsScreen}
+          options={{title: 'User Details', headerShadowVisible: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

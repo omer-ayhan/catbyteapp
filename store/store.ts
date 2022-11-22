@@ -1,12 +1,13 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import usersReducer from './reducers/usersReducers';
+import {configureStore, } from '@reduxjs/toolkit';
+import thunk, { ThunkMiddleware } from 'redux-thunk';
 
-const rootreducers = combineReducers({
-  users: usersReducer,
-});
+import usersReducer from './slices/usersSlice';
 
 export const store = configureStore({
-  reducer: rootreducers,
+  reducer: {
+    users: usersReducer,
+  },
+  middleware: [thunk as ThunkMiddleware],
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
