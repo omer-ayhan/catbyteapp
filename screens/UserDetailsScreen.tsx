@@ -1,14 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {Center, Image, Text, VStack} from 'native-base';
-import {useRoute} from '@react-navigation/native';
+import {RouteProp, useRoute} from '@react-navigation/native';
 import {InitialState, UserType} from '@store/slices/usersSlice';
 import axios from 'axios';
 import usersApi from '@services/usersApi';
 import {ActivityIndicator} from 'react-native';
 import {useAppSelector} from '@hooks/useAppSelector';
+import Routes from '@constants/routes';
+import {ParamList} from '@constants/types';
 
 export default function UserDetailsScreen() {
-  const route = useRoute<any>();
+  const route = useRoute<RouteProp<ParamList, 'UserDetails'>>();
   const {users} = useAppSelector(state => state.users);
   const [user, setUser] = useState<InitialState['users'][number] | null>(null);
 
@@ -29,7 +31,7 @@ export default function UserDetailsScreen() {
       <Text alignSelf="center" fontSize="p1" fontWeight="bold">
         {user?.firstName} {user?.lastName} ({user?.age})
       </Text>
-      <Text fontSize="h3">Company Details</Text>
+      <Text fontSize="h3">Company Details:</Text>
 
       <Text fontSize="p1">Adress: {user?.address.address}</Text>
       <Text fontSize="p1">Postal Code: {user?.address.postalCode}</Text>

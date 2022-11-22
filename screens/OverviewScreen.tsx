@@ -28,7 +28,9 @@ export default function OverviewScreen() {
             <UserCard
               id={item.id}
               onPress={() =>
-                navigation.navigate(Routes.UserDetails, {id: item.id})
+                navigation.navigate(Routes.UserDetails, {
+                  id: item.id,
+                })
               }
               name={`${item.firstName} ${item.lastName}`}
               age={item.age}
