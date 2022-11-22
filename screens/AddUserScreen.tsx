@@ -37,7 +37,9 @@ export default function AddUserScreen() {
           bg="white"
           bounces={false}
           contentContainerStyle={{flexGrow: Platform.OS === 'ios' ? 1 : 0}}>
-          <KeyboardAvoidingView flex={1} behavior={'padding'}>
+          <KeyboardAvoidingView
+            flex={1}
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <VStack bg="white" flex={1} space={5} p="3">
               <Input
                 placeholder="First name"
