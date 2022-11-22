@@ -26,8 +26,9 @@ export default function OverviewScreen() {
           numColumns={3}
           renderItem={({item}) => (
             <UserCard
+              id={item.id}
               onPress={() =>
-                navigation.navigate(Routes.UserDetails, {id: item.id} as any)
+                navigation.navigate(Routes.UserDetails, {id: item.id})
               }
               name={`${item.firstName} ${item.lastName}`}
               age={item.age}

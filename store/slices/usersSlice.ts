@@ -45,7 +45,8 @@ const usersSlice = createSlice({
         ...action.payload,
       });
     },
-    deleteUser(state, action: PayloadAction<UserType>) {
+    deleteUser(state, action: PayloadAction<{id: UserType['id']}>) {
+      console.log(action.payload);
       state.users = state.users.filter(user => user.id !== action.payload.id);
     },
   },
@@ -69,6 +70,6 @@ const usersSlice = createSlice({
 
 const {actions, reducer} = usersSlice;
 
-export const {AddUser} = actions;
+export const {AddUser, deleteUser} = actions;
 
 export default reducer;
